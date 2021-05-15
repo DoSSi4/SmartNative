@@ -6,7 +6,6 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,14 +31,9 @@
                                         <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="Zgk-8g-pG1">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
-                                        <rightBarButtonItems>
-                                            <barButtonItem image="cart.fill" catalog="system" id="HBa-Ig-mWV">
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </barButtonItem>
-                                            <barButtonItem image="magnifyingglass" catalog="system" id="VrZ-45-aR2">
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </barButtonItem>
-                                        </rightBarButtonItems>
+                                        <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="HBa-Ig-mWV">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -116,8 +110,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y0B-vv-jjf">
-                                <rect key="frame" x="0.0" y="84" width="414" height="729"/>
+                                <rect key="frame" x="0.0" y="89" width="414" height="724"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="ooF-CS-y3x">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bu8-Hg-arH">
                                 <rect key="frame" x="0.0" y="44" width="414" height="40"/>
@@ -133,14 +132,9 @@
                                         <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="nxZ-Ea-HY9">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
-                                        <rightBarButtonItems>
-                                            <barButtonItem image="cart.fill" catalog="system" id="Cb6-Up-zSo">
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </barButtonItem>
-                                            <barButtonItem image="magnifyingglass" catalog="system" id="mks-qg-V1u">
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </barButtonItem>
-                                        </rightBarButtonItems>
+                                        <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="Cb6-Up-zSo">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -153,19 +147,20 @@
                             <constraint firstItem="Bu8-Hg-arH" firstAttribute="leading" secondItem="foR-vk-qzl" secondAttribute="leading" id="U9P-Ff-tYk"/>
                             <constraint firstItem="Y0B-vv-jjf" firstAttribute="leading" secondItem="foR-vk-qzl" secondAttribute="leading" id="lCN-37-2Cj"/>
                             <constraint firstItem="Bu8-Hg-arH" firstAttribute="top" secondItem="foR-vk-qzl" secondAttribute="top" id="qFU-kE-DcM"/>
-                            <constraint firstItem="Y0B-vv-jjf" firstAttribute="top" secondItem="Bu8-Hg-arH" secondAttribute="bottom" id="xdq-zS-PWr"/>
+                            <constraint firstItem="Y0B-vv-jjf" firstAttribute="top" secondItem="Bu8-Hg-arH" secondAttribute="bottom" constant="5" id="xdq-zS-PWr"/>
                             <constraint firstItem="Bu8-Hg-arH" firstAttribute="trailing" secondItem="foR-vk-qzl" secondAttribute="trailing" id="zlw-f2-uux"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Каталог" image="rectangle.grid.2x2.fill" catalog="system" id="fKo-tN-Vtd"/>
                     <navigationItem key="navigationItem" id="2Hr-gn-pFh"/>
                     <connections>
+                        <outlet property="searchBar" destination="ooF-CS-y3x" id="9bC-V8-Jql"/>
                         <outlet property="tableView" destination="Y0B-vv-jjf" id="Dif-pd-eUX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ax3-V1-UwQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60.869565217391312" y="0.0"/>
+            <point key="canvasLocation" x="18.840579710144929" y="75.669642857142847"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -361,62 +356,55 @@
                                         <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="c1f-5P-TxO">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
-                                        <rightBarButtonItems>
-                                            <barButtonItem image="cart.fill" catalog="system" id="hsg-9I-TgP">
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="show" id="wMr-DY-xwc"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem image="magnifyingglass" catalog="system" id="J0d-q2-j2e">
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </barButtonItem>
-                                        </rightBarButtonItems>
+                                        <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="hsg-9I-TgP">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="wMr-DY-xwc"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MXg-xX-QC9">
-                                <rect key="frame" x="5" y="94" width="404" height="189"/>
+                                <rect key="frame" x="5" y="94" width="404" height="192"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="192" id="58h-36-lbZ"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Msn-eB-RIL">
-                                <rect key="frame" x="299.5" y="313" width="109.5" height="28"/>
+                                <rect key="frame" x="299.5" y="316" width="109.5" height="28"/>
                                 <color key="backgroundColor" red="0.99607843159999998" green="0.14509806040000001" blue="0.38431376220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <state key="normal" title="Посмотреть все">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="ShowAll" destination="7fw-BV-6X9" eventType="touchUpInside" id="BI3-wc-Wdy"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Категории" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KE-BX-leg">
-                                <rect key="frame" x="160" y="313" width="87.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Категории" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3KE-BX-leg">
+                                <rect key="frame" x="160" y="316" width="87.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Uh-bK-tAJ">
-                                <rect key="frame" x="5" y="343.5" width="404" height="128"/>
+                                <rect key="frame" x="5" y="351.5" width="404" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="liY-aL-92D"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="epc-Re-EhQ">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="epc-Re-EhQ">
                                     <size key="itemSize" width="128" height="128"/>
+                                    <size key="estimatedItemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="DFb-Ze-c83">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xmA-5N-VI7">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rad-Bh-cc5">
-                                <rect key="frame" x="299" y="501.5" width="110" height="28"/>
+                                <rect key="frame" x="299" y="509.5" width="110" height="28"/>
                                 <color key="backgroundColor" red="0.99607843159999998" green="0.14509806040000001" blue="0.38431376220000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <state key="normal" title="Посмотреть все">
@@ -424,30 +412,22 @@
                                 </state>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fr8-aq-mVK">
-                                <rect key="frame" x="5" y="532" width="404" height="128"/>
+                                <rect key="frame" x="5" y="545" width="404" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="M2d-ta-f8h"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U68-zH-KSR">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U68-zH-KSR">
                                     <size key="itemSize" width="128" height="128"/>
+                                    <size key="estimatedItemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="boi-TM-f9P">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="L06-4g-xcK">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Популярные" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efh-U5-Pxw">
-                                <rect key="frame" x="155" y="501.5" width="105" height="20.5"/>
+                                <rect key="frame" x="155" y="509.5" width="105" height="30.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -460,7 +440,7 @@
                             <constraint firstItem="SFz-dq-BFj" firstAttribute="trailing" secondItem="MXg-xX-QC9" secondAttribute="trailing" constant="5" id="1bz-yw-Kvu"/>
                             <constraint firstItem="3KE-BX-leg" firstAttribute="top" secondItem="MXg-xX-QC9" secondAttribute="bottom" constant="30" id="4KJ-OV-Yar"/>
                             <constraint firstItem="SFz-dq-BFj" firstAttribute="trailing" secondItem="Msn-eB-RIL" secondAttribute="trailing" constant="5" id="FrR-J4-0Wa"/>
-                            <constraint firstItem="fr8-aq-mVK" firstAttribute="top" secondItem="efh-U5-Pxw" secondAttribute="bottom" constant="10" id="Ijv-zZ-zwj"/>
+                            <constraint firstItem="fr8-aq-mVK" firstAttribute="top" secondItem="efh-U5-Pxw" secondAttribute="bottom" constant="5" id="Ijv-zZ-zwj"/>
                             <constraint firstItem="efh-U5-Pxw" firstAttribute="top" secondItem="7Uh-bK-tAJ" secondAttribute="bottom" constant="30" id="KQO-pC-noO"/>
                             <constraint firstItem="fr8-aq-mVK" firstAttribute="leading" secondItem="SFz-dq-BFj" secondAttribute="leading" constant="5" id="LMn-1p-9st"/>
                             <constraint firstItem="Msn-eB-RIL" firstAttribute="leading" secondItem="3KE-BX-leg" secondAttribute="trailing" constant="52" id="M61-5o-cx2"/>
@@ -472,12 +452,12 @@
                             <constraint firstItem="7Uh-bK-tAJ" firstAttribute="leading" secondItem="SFz-dq-BFj" secondAttribute="leading" constant="5" id="dHi-7I-AIA"/>
                             <constraint firstItem="BzE-ld-JBI" firstAttribute="leading" secondItem="SFz-dq-BFj" secondAttribute="leading" id="ffm-PV-bJz"/>
                             <constraint firstItem="efh-U5-Pxw" firstAttribute="leading" secondItem="SFz-dq-BFj" secondAttribute="leading" constant="155" id="hUF-6b-Zuu"/>
-                            <constraint firstItem="SFz-dq-BFj" firstAttribute="bottom" secondItem="fr8-aq-mVK" secondAttribute="bottom" constant="153" id="hqm-fK-Kfu"/>
                             <constraint firstItem="BzE-ld-JBI" firstAttribute="trailing" secondItem="SFz-dq-BFj" secondAttribute="trailing" id="kL9-J5-0LQ"/>
                             <constraint firstItem="MXg-xX-QC9" firstAttribute="leading" secondItem="SFz-dq-BFj" secondAttribute="leading" constant="5" id="kO9-RE-aYi"/>
                             <constraint firstItem="MXg-xX-QC9" firstAttribute="top" secondItem="BzE-ld-JBI" secondAttribute="bottom" constant="10" id="t9A-Sj-qLx"/>
                             <constraint firstItem="3KE-BX-leg" firstAttribute="leading" secondItem="SFz-dq-BFj" secondAttribute="leading" constant="160" id="ui2-Dv-9iZ"/>
-                            <constraint firstItem="7Uh-bK-tAJ" firstAttribute="top" secondItem="3KE-BX-leg" secondAttribute="bottom" constant="10" id="vns-6c-gtn"/>
+                            <constraint firstItem="SFz-dq-BFj" firstAttribute="bottom" secondItem="fr8-aq-mVK" secondAttribute="bottom" constant="140" id="urz-Pw-1Or"/>
+                            <constraint firstItem="7Uh-bK-tAJ" firstAttribute="top" secondItem="3KE-BX-leg" secondAttribute="bottom" constant="15" id="vns-6c-gtn"/>
                             <constraint firstItem="rad-Bh-cc5" firstAttribute="top" secondItem="7Uh-bK-tAJ" secondAttribute="bottom" constant="30" id="xSD-lL-vdo"/>
                         </constraints>
                     </view>
@@ -493,7 +473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mms-vN-VBx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60.869565217391312" y="702.45535714285711"/>
+            <point key="canvasLocation" x="-3" y="714"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="7Ln-IO-hup">

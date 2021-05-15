@@ -1,0 +1,6 @@
+framework module Pods_smartnative {
+  umbrella header "Pods-smartnative-umbrella.h"
+
+  export *
+  module * { export * }
+}

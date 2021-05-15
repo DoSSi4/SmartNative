@@ -8,6 +8,8 @@
 import UIKit
 
 class PopularListCell: UICollectionViewCell {
+    @IBOutlet weak var populItemImage: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     static let identifier = "PopularListCell"
     override func awakeFromNib() {
         super.awakeFromNib()

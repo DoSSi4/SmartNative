@@ -11,18 +11,25 @@ class CatalogViewController: UIViewController {
     var catalogList = [CatalogList](){
         didSet{
             DispatchQueue.main.async {
+                self.filteredData = self.catalogList
                 self.tableView.reloadData()
             }
             
         }
     }
+    var filteredData: [CatalogList]!
     
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UINib(nibName: CatalogCell.identifier, bundle: nil), forCellReuseIdentifier: CatalogCell.identifier)
         fetchAPI()
+        filteredData = catalogList
     }
     private func fetchAPI(){
         var request: URLRequest = URLRequest(url: URL(string: "https://smartbazar.kz/api/categories")!)
@@ -38,21 +45,34 @@ class CatalogViewController: UIViewController {
             }
         }
         task.resume()
-        
-    }
+            }
 
 }
 extension CatalogViewController: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return catalogList.count
+        return filteredData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = self.catalogList[indexPath.row].title
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: CatalogCell.identifier, for: indexPath) as! CatalogCell
+        cell.catalogLabel.text = self.filteredData[indexPath.row].title
         return cell
     }
     
     
+}
+extension CatalogViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredData = []
+        if searchText == ""{
+            filteredData = catalogList
+        }
+            for category in catalogList{
+                if category.title.lowercased().contains(searchText.lowercased()){
+                    filteredData.append(category)
+                }
+                }
+            
+        self.tableView.reloadData()
+        }
 }
