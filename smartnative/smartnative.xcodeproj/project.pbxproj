@@ -24,6 +24,9 @@
 		3F40DEC026483EA9007F9EDC /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F40DEBE26483EA9007F9EDC /* CategoryCell.xib */; };
 		3F40DEC326483EBA007F9EDC /* PopularListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F40DEC126483EBA007F9EDC /* PopularListCell.swift */; };
 		3F40DEC426483EBA007F9EDC /* PopularListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F40DEC226483EBA007F9EDC /* PopularListCell.xib */; };
+		3F42CA3C2650715F00DBD06A /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F42CA3B2650715F00DBD06A /* CategoryViewController.swift */; };
+		3F42CA41265156DB00DBD06A /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F42CA3F265156DB00DBD06A /* ProductCell.swift */; };
+		3F42CA42265156DB00DBD06A /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F42CA40265156DB00DBD06A /* ProductCell.xib */; };
 		3F90F403262D88330071A6E9 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F90F402262D88330071A6E9 /* RegistrationViewController.swift */; };
 		3FB8145C263C5A09007777E7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB8145B263C5A09007777E7 /* HomeViewController.swift */; };
 		3FDE11242649805B008F10BC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDE11232649805B008F10BC /* Item.swift */; };
@@ -52,6 +55,9 @@
 		3F40DEBE26483EA9007F9EDC /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		3F40DEC126483EBA007F9EDC /* PopularListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularListCell.swift; sourceTree = "<group>"; };
 		3F40DEC226483EBA007F9EDC /* PopularListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularListCell.xib; sourceTree = "<group>"; };
+		3F42CA3B2650715F00DBD06A /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		3F42CA3F265156DB00DBD06A /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		3F42CA40265156DB00DBD06A /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		3F90F402262D88330071A6E9 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		3FB8145B263C5A09007777E7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3FDE11232649805B008F10BC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -132,6 +138,8 @@
 				3F40DEBE26483EA9007F9EDC /* CategoryCell.xib */,
 				3F40DEC126483EBA007F9EDC /* PopularListCell.swift */,
 				3F40DEC226483EBA007F9EDC /* PopularListCell.xib */,
+				3F42CA3F265156DB00DBD06A /* ProductCell.swift */,
+				3F42CA40265156DB00DBD06A /* ProductCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -145,6 +153,7 @@
 				3F2C3572261338CC00D33973 /* LoginViewController.swift */,
 				3FB8145B263C5A09007777E7 /* HomeViewController.swift */,
 				3F05B817264487FB00664228 /* CatalogViewController.swift */,
+				3F42CA3B2650715F00DBD06A /* CategoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -218,6 +227,7 @@
 			files = (
 				3F40DEC026483EA9007F9EDC /* CategoryCell.xib in Resources */,
 				3F40DEC426483EBA007F9EDC /* PopularListCell.xib in Resources */,
+				3F42CA42265156DB00DBD06A /* ProductCell.xib in Resources */,
 				3F2C356A2613373C00D33973 /* LaunchScreen.storyboard in Resources */,
 				3F2C35672613373C00D33973 /* Assets.xcassets in Resources */,
 				3F2C35652613373B00D33973 /* Main.storyboard in Resources */,
@@ -284,8 +294,10 @@
 				3F40DEC326483EBA007F9EDC /* PopularListCell.swift in Sources */,
 				3F05B81B264488F500664228 /* CatalogList.swift in Sources */,
 				3F2C35602613373B00D33973 /* SceneDelegate.swift in Sources */,
+				3F42CA3C2650715F00DBD06A /* CategoryViewController.swift in Sources */,
 				3F05B818264487FB00664228 /* CatalogViewController.swift in Sources */,
 				3F2347C12637225F0070A733 /* ResetPassViewController.swift in Sources */,
+				3F42CA41265156DB00DBD06A /* ProductCell.swift in Sources */,
 				3F90F403262D88330071A6E9 /* RegistrationViewController.swift in Sources */,
 				3F40DEBF26483EA9007F9EDC /* CategoryCell.swift in Sources */,
 			);

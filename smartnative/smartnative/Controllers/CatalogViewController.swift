@@ -57,6 +57,10 @@ extension CatalogViewController: UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: CatalogCell.identifier, for: indexPath) as! CatalogCell
         cell.catalogLabel.text = self.filteredData[indexPath.row].title
         return cell
+        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        tableView.deselectRow(at: indexPath, animated: false)
+        self.performSegue(withIdentifier: "openCategory", sender: self)
     }
     
     
