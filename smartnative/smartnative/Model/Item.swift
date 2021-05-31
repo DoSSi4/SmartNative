@@ -11,16 +11,23 @@ struct Item: Codable{
     let product_id: Int
     let price: Int
     let product: Product
-    
 }
+
 struct Product: Codable{
     let id: Int
     let galleries: [Galleries]
     let category_id: Int
     let title: String
-}
+    let items: [Items]
+
 struct Galleries: Codable{
     let product_id: Int
     let id: Int
     let image: String
+}
+struct Items: Codable{
+    let id: Int
+    let count: Int
+    let price: Int
+}
 }

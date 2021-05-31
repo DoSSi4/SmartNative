@@ -18,7 +18,7 @@ var imageNames = ["1","2","3"]
 
         }
     }
-    var popularList = [Item](){
+    var popularList = [ItemElement](){
         didSet{
             DispatchQueue.main.async {
                 self.popularCollection.reloadData()
@@ -43,12 +43,7 @@ var imageNames = ["1","2","3"]
             self.imageSlider.image = UIImage(named: self.imageNames.randomElement()!)
         }
         timer.fire()
-        
 }
-    @IBAction func ShowAll(){
-        self.performSegue(withIdentifier: "ShowAll", sender: self)
-        self.hidesBottomBarWhenPushed = false
-    }
     private func fetchAPI(){
         var request: URLRequest = URLRequest(url: URL(string: "https://smartbazar.kz/api/categories")!)
         request.setValue("application/json;charset=UTF-8", forHTTPHeaderField: "Content-Type")
@@ -71,7 +66,7 @@ var imageNames = ["1","2","3"]
                 print("Error occured! \(error)")
             }
             if let data = data1{
-                let json1 = try? JSONDecoder().decode([Item].self, from: data)
+                let json1 = try? JSONDecoder().decode([ItemElement].self, from: data)
                 self.popularList = json1!
             }
         }
@@ -93,10 +88,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
         return cell
         }
         else{
-//            let imgUrl = URL(string: self.popularList[indexPath.row].product.galleries[])
+            let imgUrl = self.popularList[indexPath.row].product.galleries
+            var imageLink: URL?
+            for imgUrl1 in imgUrl{
+                imageLink = URL(string: imgUrl1.image)
+            }
             let cell = popularCollection.dequeueReusableCell(withReuseIdentifier: "PopularListCell", for: indexPath) as! PopularListCell
             cell.titleLabel.text = self.popularList[indexPath.row].product.title
-//            cell.populItemImage.kf.setImage(with: imgUrl)
+            cell.populItemImage.kf.setImage(with: imageLink)
+            
             return cell
         }
     }

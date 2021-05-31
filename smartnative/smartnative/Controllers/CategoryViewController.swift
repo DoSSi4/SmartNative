@@ -37,6 +37,7 @@ class CategoryViewController: UIViewController {
             if let data = data{
                 let json = try? JSONDecoder().decode([Product].self, from: data)
                 self.productList = json!
+                
             }
         }
         task.resume()
@@ -51,7 +52,16 @@ extension CategoryViewController: UICollectionViewDelegateFlowLayout, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as! ProductCell
         cell.prodTitle.text = productList[indexPath.row].title
-//        cell.prodPrice.text = productList[indexPath.row
+        let imgUrl = self.productList[indexPath.row].galleries
+        var imageLink: URL?
+        for imgUrl1 in imgUrl{
+            imageLink = URL(string: imgUrl1.image)
+        }
+        cell.prodImg.kf.setImage(with: imageLink)
+        let priceparse = self.productList[indexPath.row].items
+        for price in priceparse{
+            cell.prodPrice.text = "\(price.price)"
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -17,16 +17,23 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="180" translatesAutoresizingMaskIntoConstraints="NO" id="s6g-nJ-4mh">
-                        <rect key="frame" x="5" y="5" width="190" height="143.5"/>
+                        <rect key="frame" x="25" y="5" width="150" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="5Hi-mK-aPU"/>
+                            <constraint firstAttribute="height" constant="150" id="eOy-jO-Y2x"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MV9-dA-Zqk">
-                        <rect key="frame" x="5" y="148.5" width="190" height="20.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R32-oK-w96">
+                        <rect key="frame" x="5" y="165" width="110" height="25"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vts-Dq-G30">
-                        <rect key="frame" x="153" y="174" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceX-Iv-PXv">
+                        <rect key="frame" x="145" y="165" width="50" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="cWm-3K-D8e"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,19 +43,20 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="s6g-nJ-4mh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="31S-tR-JHE"/>
-                <constraint firstItem="MV9-dA-Zqk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="3d2-3y-AiX"/>
-                <constraint firstItem="Vts-Dq-G30" firstAttribute="top" secondItem="MV9-dA-Zqk" secondAttribute="bottom" constant="5" id="IHS-BQ-iga"/>
-                <constraint firstItem="s6g-nJ-4mh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Mpg-ww-xbw"/>
-                <constraint firstAttribute="trailing" secondItem="s6g-nJ-4mh" secondAttribute="trailing" constant="5" id="Q9Y-BO-1GD"/>
-                <constraint firstAttribute="trailing" secondItem="MV9-dA-Zqk" secondAttribute="trailing" constant="5" id="R1b-I1-42P"/>
-                <constraint firstAttribute="bottom" secondItem="Vts-Dq-G30" secondAttribute="bottom" constant="5" id="YeF-2L-WIJ"/>
-                <constraint firstAttribute="trailing" secondItem="Vts-Dq-G30" secondAttribute="trailing" constant="5" id="ccc-mG-2Ab"/>
-                <constraint firstItem="MV9-dA-Zqk" firstAttribute="top" secondItem="s6g-nJ-4mh" secondAttribute="bottom" id="edD-FN-ekt"/>
+                <constraint firstAttribute="bottom" secondItem="ceX-Iv-PXv" secondAttribute="bottom" constant="10" id="5L4-4K-5X1"/>
+                <constraint firstItem="ceX-Iv-PXv" firstAttribute="leading" secondItem="R32-oK-w96" secondAttribute="trailing" constant="30" id="DPm-xW-SRY"/>
+                <constraint firstItem="s6g-nJ-4mh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="25" id="Mpg-ww-xbw"/>
+                <constraint firstAttribute="trailing" secondItem="s6g-nJ-4mh" secondAttribute="trailing" constant="25" id="Q9Y-BO-1GD"/>
+                <constraint firstItem="R32-oK-w96" firstAttribute="top" secondItem="s6g-nJ-4mh" secondAttribute="bottom" constant="10" id="UwM-Ga-IMr"/>
+                <constraint firstItem="R32-oK-w96" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="nxt-xq-RIW"/>
+                <constraint firstItem="ceX-Iv-PXv" firstAttribute="top" secondItem="s6g-nJ-4mh" secondAttribute="bottom" constant="10" id="pCD-KU-sWH"/>
+                <constraint firstAttribute="trailing" secondItem="ceX-Iv-PXv" secondAttribute="trailing" constant="5" id="xhP-T0-HGJ"/>
+                <constraint firstAttribute="bottom" secondItem="R32-oK-w96" secondAttribute="bottom" constant="10" id="yh2-ac-hXG"/>
             </constraints>
             <connections>
                 <outlet property="prodImg" destination="s6g-nJ-4mh" id="gcq-HH-VCO"/>
-                <outlet property="prodPrice" destination="Vts-Dq-G30" id="lyD-EA-dEc"/>
-                <outlet property="prodTitle" destination="MV9-dA-Zqk" id="qKG-Hj-77F"/>
+                <outlet property="prodPrice" destination="ceX-Iv-PXv" id="0q9-RK-idA"/>
+                <outlet property="prodTitle" destination="R32-oK-w96" id="aEa-uy-mFQ"/>
             </connections>
             <point key="canvasLocation" x="34.782608695652179" y="84.375"/>
         </collectionViewCell>
