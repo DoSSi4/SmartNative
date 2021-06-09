@@ -23,6 +23,7 @@ class WishlistViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: WishlistCell.identifier, bundle: nil), forCellReuseIdentifier: WishlistCell.identifier)
         fetchAPI()
+    
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -50,6 +51,7 @@ class WishlistViewController: UIViewController {
                 
             }
         }.resume()
+        print(token)
     }
 
 }
@@ -69,24 +71,21 @@ extension WishlistViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = "smartbazar.kz"
-        components.path = "/auth/unlike/"
-//        components.queryItems = []
-//        if {
-//            components.queryItems?.append(URLQueryItem())
-//        }
+        var request: URLRequest = URLRequest(url: URL(string: "http://smartbazar.kz/api/auth/unlike/\(wishlistArray[indexPath.row].item_id)")!)
+        request.httpMethod = "DELETE"
         let unlikeAction = UIContextualAction(style: .destructive, title: "Unlike") { action, view, handler in
-        var request: URLRequest = URLRequest(url: components.url!)
-            request.httpMethod = "DELETE"
-            
-        
-        
+            URLSession.shared.dataTask(with: request){data, response, error in
+                if let response = response{
+                    print(response)
+                }
+                if let error = error{
+                print(error)
+            }
+            }
+    }
+        unlikeAction.backgroundColor = .red
+        let configuration = UISwipeActionsConfiguration(actions: [unlikeAction])
+                return configuration
         
     }
-    }
-
-
-    
 }

@@ -110,7 +110,7 @@
                     <navigationItem key="navigationItem" id="3IG-20-erb"/>
                     <connections>
                         <outlet property="tableView" destination="Rcg-tl-MWX" id="c3c-1w-6Kx"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="LoginView" modalPresentationStyle="automatic" id="ahC-tH-ceC"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="LoginView" id="ahC-tH-ceC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9a1-R1-Nok" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
