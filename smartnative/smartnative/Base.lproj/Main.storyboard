@@ -85,7 +85,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-tl-MWX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-tl-MWX">
                                 <rect key="frame" x="0.0" y="84" width="414" height="729"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
@@ -150,6 +150,10 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="Cb6-Up-zSo">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="showLogin:" destination="t8p-SN-dRg" id="Owc-q5-7WF"/>
+                                                <segue destination="BYZ-38-t0r" kind="show" identifier="ShowLogin" id="V2M-Cc-ta7"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -799,6 +803,9 @@
             <point key="canvasLocation" x="-1272" y="472"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ahC-tH-ceC"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="120" width="120" height="120"/>
         <image name="180" width="180" height="180"/>

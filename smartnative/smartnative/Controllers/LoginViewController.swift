@@ -37,17 +37,18 @@ class LoginViewController: UIViewController {
             "phone": phoneTextField.text,
             "password": passwordTextField.text
         ]
-        var token: String = ""
+        var token = UserDefaults.standard.string(forKey: "token")
         let jsonParam = try? JSONSerialization.data(withJSONObject: jsonDictionary, options: .prettyPrinted)
         let task = URLSession.shared.uploadTask(with: request, from: jsonParam){ data, response, error in
             if let data = data{
             if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]{
                 if let tokenunwrap = json["access_token"] as? String{
                     token = tokenunwrap
-                    request1.setValue("Bearer" + token, forHTTPHeaderField: "Authorization")}
+                    request1.setValue("Bearer" + token!, forHTTPHeaderField: "Authorization")}
                 URLSession.shared.dataTask(with: request1){data,response,error in
                     print("Success")
-                    UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                    UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
+                    UserDefaults.standard.setValue(token, forKey: "token")
                     UserDefaults.standard.synchronize()
                 }.resume()
             }

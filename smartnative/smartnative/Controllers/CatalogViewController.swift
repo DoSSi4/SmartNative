@@ -31,6 +31,10 @@ class CatalogViewController: UIViewController {
         fetchAPI()
         filteredData = catalogList
     }
+    @IBAction func showLogin(_ sender: Any)
+    {
+        self.performSegue(withIdentifier: "ShowLogin", sender: self)
+    }
     private func fetchAPI(){
         var request: URLRequest = URLRequest(url: URL(string: "https://smartbazar.kz/api/categories")!)
         request.setValue("application/json;charset=UTF-8", forHTTPHeaderField: "Content-Type")

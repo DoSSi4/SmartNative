@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WishlistCell" id="KGk-i7-Jjw" customClass="WishlistCell" customModule="smartnative" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Lzt-6D-jL8">
+                        <rect key="frame" x="5" y="5" width="310" height="294"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="294" id="a3k-2N-Z2u"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ek2-st-5Du">
+                        <rect key="frame" x="100" y="309" width="120" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="of2-9y-psw">
+                        <rect key="frame" x="264" y="10" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="8e9-Az-ByC"/>
+                            <constraint firstAttribute="height" constant="40" id="9l3-Bt-Z1z"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <state key="normal" image="heart.fill" catalog="system"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Ek2-st-5Du" secondAttribute="trailing" priority="999" constant="100" id="EIh-gC-oLc"/>
+                    <constraint firstItem="of2-9y-psw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="H51-Qq-bJc"/>
+                    <constraint firstAttribute="bottom" secondItem="Ek2-st-5Du" secondAttribute="bottom" constant="20" id="Ruh-Ic-30A"/>
+                    <constraint firstItem="Lzt-6D-jL8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Zaw-A0-2ga"/>
+                    <constraint firstItem="Ek2-st-5Du" firstAttribute="top" secondItem="Lzt-6D-jL8" secondAttribute="bottom" constant="10" id="eYY-Sa-pU5"/>
+                    <constraint firstAttribute="trailing" secondItem="of2-9y-psw" secondAttribute="trailing" constant="16" id="jQi-YY-RNf"/>
+                    <constraint firstItem="Lzt-6D-jL8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="mis-MV-Ebu"/>
+                    <constraint firstItem="Ek2-st-5Du" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="999" constant="100" id="qyo-bz-fzO"/>
+                    <constraint firstAttribute="trailing" secondItem="Lzt-6D-jL8" secondAttribute="trailing" constant="5" id="smr-4P-2UX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="likeButton" destination="of2-9y-psw" id="Dga-zu-iqM"/>
+                <outlet property="productImg" destination="Lzt-6D-jL8" id="5ca-jU-2Pn"/>
+                <outlet property="titleLabel" destination="Ek2-st-5Du" id="sQI-pQ-HeS"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="85"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+    </resources>
+</document>
