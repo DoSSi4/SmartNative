@@ -60,7 +60,7 @@ extension CategoryViewController: UICollectionViewDelegateFlowLayout, UICollecti
         cell.prodImg.kf.setImage(with: imageLink)
         let priceparse = self.productList[indexPath.row].items
         for price in priceparse{
-            cell.prodPrice.text = "\(price.price)"
+            cell.prodPrice.text = "\(price.price) тг."
         }
         return cell
     }

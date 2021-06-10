@@ -51,7 +51,6 @@ class WishlistViewController: UIViewController {
                 
             }
         }.resume()
-        print(token)
     }
 
 }
@@ -71,17 +70,25 @@ extension WishlistViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        var request: URLRequest = URLRequest(url: URL(string: "http://smartbazar.kz/api/auth/unlike/\(wishlistArray[indexPath.row].item_id)")!)
+        let token = UserDefaults.standard.string(forKey: "token")
+        var request: URLRequest = URLRequest(url: URL(string: "https://smartbazar.kz/api/auth/wishlist/unlike/\(wishlistArray[indexPath.row].item_id)")!)
         request.httpMethod = "DELETE"
-        let unlikeAction = UIContextualAction(style: .destructive, title: "Unlike") { action, view, handler in
+        request.setValue("application/json;charset=UTF-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("Bearer " + token!, forHTTPHeaderField: "Authorization")
+        print(token!)
+       
+        let unlikeAction = UIContextualAction(style: .destructive, title: "Удалить из избранного") { action, view, handler in
             URLSession.shared.dataTask(with: request){data, response, error in
-                if let response = response{
-                    print(response)
+                if let response = response as? HTTPURLResponse{
+                    if response.statusCode == 200{
+                        DispatchQueue.main.async {
+                            self.fetchAPI()
+                        self.tableView.reloadData()
+                    }
+                    }
                 }
-                if let error = error{
-                print(error)
-            }
-            }
+            }.resume()
     }
         unlikeAction.backgroundColor = .red
         let configuration = UISwipeActionsConfiguration(actions: [unlikeAction])

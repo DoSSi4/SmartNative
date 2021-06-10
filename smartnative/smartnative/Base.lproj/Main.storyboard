@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Доставка-->
+        <!--Корзина-->
         <scene sceneID="zjH-rH-2Vk">
             <objects>
                 <viewController id="nWq-IB-G6U" sceneMemberID="viewController">
@@ -31,7 +31,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="Zgk-8g-pG1">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="HBa-Ig-mWV">
+                                        <barButtonItem key="rightBarButtonItem" image="person.fill" catalog="system" id="HBa-Ig-mWV">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
                                     </navigationItem>
@@ -46,11 +46,11 @@
                             <constraint firstItem="Mt8-89-o3J" firstAttribute="trailing" secondItem="Uay-ov-B5K" secondAttribute="trailing" id="t44-4c-FxV"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Доставка" image="shippingbox.fill" catalog="system" id="2S5-4B-c1y"/>
+                    <tabBarItem key="tabBarItem" title="Корзина" image="cart" catalog="system" id="2S5-4B-c1y"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahk-CJ-1Er" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-48" y="1418"/>
+            <point key="canvasLocation" x="35" y="1412"/>
         </scene>
         <!--Избранное-->
         <scene sceneID="kir-d9-B6s">
@@ -75,7 +75,7 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
                                         <rightBarButtonItems>
-                                            <barButtonItem image="cart.fill" catalog="system" id="epF-cu-Ecq">
+                                            <barButtonItem image="person.fill" catalog="system" id="epF-cu-Ecq">
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </barButtonItem>
                                             <barButtonItem image="magnifyingglass" catalog="system" id="anG-sf-N5L">
@@ -148,7 +148,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="nxZ-Ea-HY9">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="Cb6-Up-zSo">
+                                        <barButtonItem key="rightBarButtonItem" image="person.fill" catalog="system" id="Cb6-Up-zSo">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <action selector="showLogin:" destination="t8p-SN-dRg" id="Owc-q5-7WF"/>
@@ -207,9 +207,6 @@
                                             <connections>
                                                 <action selector="backToCategories:" destination="OPb-aA-TX3" id="d86-c5-Bfv"/>
                                             </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="6HC-LO-fhB">
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -444,7 +441,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="c1f-5P-TxO">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="hsg-9I-TgP">
+                                        <barButtonItem key="rightBarButtonItem" image="person.fill" catalog="system" id="hsg-9I-TgP">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </barButtonItem>
                                     </navigationItem>
@@ -809,14 +806,14 @@
     <resources>
         <image name="120" width="120" height="120"/>
         <image name="180" width="180" height="180"/>
-        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="rectangle.grid.2x2.fill" catalog="system" width="128" height="99"/>
-        <image name="shippingbox.fill" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

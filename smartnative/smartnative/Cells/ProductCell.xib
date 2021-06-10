@@ -24,18 +24,18 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R32-oK-w96">
-                        <rect key="frame" x="5" y="165" width="110" height="25"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="5" y="165" width="95" height="25"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceX-Iv-PXv">
-                        <rect key="frame" x="145" y="165" width="50" height="25"/>
+                        <rect key="frame" x="120" y="165" width="75" height="25"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="cWm-3K-D8e"/>
+                            <constraint firstAttribute="width" constant="75" id="cWm-3K-D8e"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                        <color key="textColor" red="0.92941176889999999" green="0.1764705926" blue="0.30196079609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -44,7 +44,7 @@
             <constraints>
                 <constraint firstItem="s6g-nJ-4mh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="31S-tR-JHE"/>
                 <constraint firstAttribute="bottom" secondItem="ceX-Iv-PXv" secondAttribute="bottom" constant="10" id="5L4-4K-5X1"/>
-                <constraint firstItem="ceX-Iv-PXv" firstAttribute="leading" secondItem="R32-oK-w96" secondAttribute="trailing" constant="30" id="DPm-xW-SRY"/>
+                <constraint firstItem="ceX-Iv-PXv" firstAttribute="leading" secondItem="R32-oK-w96" secondAttribute="trailing" constant="20" id="DPm-xW-SRY"/>
                 <constraint firstItem="s6g-nJ-4mh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="25" id="Mpg-ww-xbw"/>
                 <constraint firstAttribute="trailing" secondItem="s6g-nJ-4mh" secondAttribute="trailing" constant="25" id="Q9Y-BO-1GD"/>
                 <constraint firstItem="R32-oK-w96" firstAttribute="top" secondItem="s6g-nJ-4mh" secondAttribute="bottom" constant="10" id="UwM-Ga-IMr"/>
