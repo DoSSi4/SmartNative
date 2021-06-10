@@ -440,6 +440,9 @@
                                     <navigationItem title="Главная" id="5yi-Hj-NeF">
                                         <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="c1f-5P-TxO">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="didTapOnMenu" destination="7fw-BV-6X9" id="1kU-sA-TpN"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="person.fill" catalog="system" id="hsg-9I-TgP">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -801,7 +804,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ahC-tH-ceC"/>
+        <segue reference="V2M-Cc-ta7"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="120" width="120" height="120"/>

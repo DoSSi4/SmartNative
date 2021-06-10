@@ -82,10 +82,8 @@ extension WishlistViewController: UITableViewDelegate, UITableViewDataSource{
             URLSession.shared.dataTask(with: request){data, response, error in
                 if let response = response as? HTTPURLResponse{
                     if response.statusCode == 200{
-                        DispatchQueue.main.async {
-                            self.fetchAPI()
-                        self.tableView.reloadData()
-                    }
+                            self.wishlistArray.remove(at: indexPath.row)
+                            tableView.deleteRows(at: [indexPath], with: .bottom)
                     }
                 }
             }.resume()

@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import SideMenu
 
 class HomeViewController: UIViewController {
 var imageNames = ["1","2","3"]
@@ -26,6 +27,7 @@ var imageNames = ["1","2","3"]
 
         }
     }
+    var menu: SideMenuNavigationController?
 
     @IBOutlet weak var imageSlider: UIImageView!
     @IBOutlet weak var catCollection: UICollectionView!
@@ -43,6 +45,12 @@ var imageNames = ["1","2","3"]
             self.imageSlider.image = UIImage(named: self.imageNames.randomElement()!)
         }
         timer.fire()
+        menu = SideMenuNavigationController(rootViewController: ListOfMenu())
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        menu?.leftSide = true
+//        menu?.setNavigationBarHidden(true, animated: false)
+        
 }
     private func fetchAPI(){
         var request: URLRequest = URLRequest(url: URL(string: "https://smartbazar.kz/api/categories")!)
@@ -71,6 +79,30 @@ var imageNames = ["1","2","3"]
             }
         }
         task1.resume()
+    }
+    @IBAction func didTapOnMenu(){
+        self.present(menu!, animated: true, completion: nil)
+    }
+}
+class ListOfMenu: UITableViewController {
+    let bazarColor = UIColor(red: 237/255.0, green: 45/255.0, blue: 77/255.0, alpha: 1)
+    override func viewDidLoad() {
+//        tableView.backgroundColor = .lightGray
+        tableView.isScrollEnabled = false
+        tableView.tintColor = bazarColor
+        tableView.register(UINib(nibName: SideMenuCell.identifier, bundle: nil), forCellReuseIdentifier: "SideMenuCell")
+        tableView.separatorStyle = .none
+    }
+    let menuitems = ["Войти/Зарегистрироваться", "Главная", "Корзина", "Ваши заказы", "FAQ", "О компании", "Доставка", "Политика конфиденциальности"]
+    let iconArr = ["person.fill", "house.fill", "cart.fill", "list.bullet", "person.fill.questionmark","info", "car", "shield.checkerboard"]
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menuitems.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuCell", for: indexPath) as! SideMenuCell
+        cell.titleLbl.text = menuitems[indexPath.row]
+        cell.iconImg.image = UIImage(systemName: iconArr[indexPath.row])
+        return cell
     }
 }
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
