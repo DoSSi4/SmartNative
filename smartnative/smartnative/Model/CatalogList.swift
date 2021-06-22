@@ -6,8 +6,6 @@
 //
 
 import Foundation
-
-
 struct CatalogList: Codable {
     let id: Int
     let title: String

@@ -1,8 +1,8 @@
 //
-//  PopularItemsModel.swift
+//  PopularListModel.swift
 //  smartnative
 //
-//  Created by DoSSi4 on 01.06.2021.
+//  Created by DoSSi4 on 22.06.2021.
 //
 
 import Foundation
