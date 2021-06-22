@@ -16,6 +16,7 @@ class WishlistViewController: UIViewController {
             }
         }
     }
+   private let refreshControl = UIRefreshControl()
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,12 @@ class WishlistViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: WishlistCell.identifier, bundle: nil), forCellReuseIdentifier: WishlistCell.identifier)
         fetchAPI()
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+           tableView.addSubview(refreshControl)
     
+    }
+    @objc func refresh(_ sender: AnyObject){
+        fetchAPI()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -51,6 +57,7 @@ class WishlistViewController: UIViewController {
                 
             }
         }.resume()
+        refreshControl.endRefreshing()
     }
 
 }
@@ -83,7 +90,7 @@ extension WishlistViewController: UITableViewDelegate, UITableViewDataSource{
                 if let response = response as? HTTPURLResponse{
                     if response.statusCode == 200{
                             self.wishlistArray.remove(at: indexPath.row)
-                            tableView.deleteRows(at: [indexPath], with: .bottom)
+//                            tableView.deleteRows(at: [indexPath], with: .bottom)
                     }
                 }
             }.resume()
