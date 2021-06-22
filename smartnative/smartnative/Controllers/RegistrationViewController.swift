@@ -46,27 +46,30 @@ class RegistrationViewController: UIViewController {
         ]
         let jsonParam = try? JSONSerialization.data(withJSONObject: jsonDict, options: .prettyPrinted)
         let jsonParam1 = try? JSONSerialization.data(withJSONObject: jsonLogDict, options: .prettyPrinted)
-        var token: String = ""
         let task = URLSession.shared.uploadTask(with: request, from: jsonParam){ data, response, error in
             let httpResp = response as? HTTPURLResponse
             if httpResp?.statusCode == 200{
                 URLSession.shared.uploadTask(with: request1, from: jsonParam1){data, response, error in
                     if let data = data{
                     if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]{
-                        if let tokenunwrap = json["access_token"] as? String{
+                        if let token = json["access_token"] as? String{
                             print("Success")
-                        token = tokenunwrap
+                            UserDefaults.standard.setValue(token, forKey: "token")
                         }
                     }
                 }
                 }
-            }else{print("Error in login!")}
+            }
+            if let error = error{
+                print(error)
+            }
         }
         task.resume()
-        let confirm = VerificationViewController()
-        confirm.confirmtoken = token
         self.performSegue(withIdentifier: "Confirm", sender: self)
         
+    }
+    @IBAction func backToLogin(){
+        self.dismiss(animated: true, completion: nil)
     }
     
     private func format(phoneNumber: String, shouldRemoveLastDigit: Bool) -> String{

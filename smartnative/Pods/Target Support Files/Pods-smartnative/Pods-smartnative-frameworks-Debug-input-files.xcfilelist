@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-smartnative/Pods-smartnative-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/SDK-iOS/SDK_iOS.framework
 ${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework

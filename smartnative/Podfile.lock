@@ -1,9 +1,11 @@
 PODS:
   - Kingfisher (6.3.0)
+  - SDK-iOS (1.0.0)
   - SideMenu (6.5.0)
 
 DEPENDENCIES:
   - Kingfisher
+  - SDK-iOS (from `https://github.com/cloudpayments/SDK-iOS`, branch `master`)
   - SideMenu
 
 SPEC REPOS:
@@ -11,10 +13,21 @@ SPEC REPOS:
     - Kingfisher
     - SideMenu
 
+EXTERNAL SOURCES:
+  SDK-iOS:
+    :branch: master
+    :git: https://github.com/cloudpayments/SDK-iOS
+
+CHECKOUT OPTIONS:
+  SDK-iOS:
+    :commit: 5d31f2aeecde87dc7febca1d2136ba348cb5354c
+    :git: https://github.com/cloudpayments/SDK-iOS
+
 SPEC CHECKSUMS:
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
+  SDK-iOS: 3d1bb56c31abedf01c122daff14324472ed393e6
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: 90f349a109a5e746512280c68dbe17e5c31592ba
+PODFILE CHECKSUM: b8d6a907e31a9ece5331c723d14440b031a1ae84
 
 COCOAPODS: 1.10.1

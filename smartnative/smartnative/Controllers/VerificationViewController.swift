@@ -8,8 +8,7 @@
 import UIKit
 
 class VerificationViewController: UIViewController {
-    
-    var confirmtoken: String?
+    let defaults = UserDefaults.standard
     @IBOutlet weak var number1: UITextField!
     @IBOutlet weak var number4: UITextField!
     @IBOutlet weak var number3: UITextField!
@@ -26,24 +25,23 @@ class VerificationViewController: UIViewController {
     
 
     @IBAction func confirmCode(_ sender: Any) {
-        if let token = confirmtoken{
+        let confirmtoken = defaults.string(forKey: "token")
         let confirmcode = "\(number1.text!)\(number2.text!)\(number3.text!)\(number4.text!)"
         var request: URLRequest = URLRequest(url: URL(string: "http://smartbazar.kz/api/auth/verify/code")!)
         request.httpMethod = "POST"
         request.setValue("application/json;charset=UTF-8", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
-            request.setValue(confirmcode + "Bearer" + token, forHTTPHeaderField: "Authorization")
+            request.setValue(confirmcode + "Bearer" + confirmtoken!, forHTTPHeaderField: "Authorization")
         URLSession.shared.dataTask(with: request){data, response, error in
             let httpResp = response as? HTTPURLResponse
             if httpResp?.statusCode == 200{
                 print("Verified!")
+                self.view.window!.rootViewController?.dismiss(animated: true)
             }
             else{
                 print("Error!")
             }
         }.resume()
-        
-    }
     
 }
     @objc func textFieldDidChange(textField: UITextField){

@@ -67,7 +67,6 @@ extension CatalogViewController: UITableViewDelegate,UITableViewDataSource{
         self.performSegue(withIdentifier: "openCategory", sender: self)
     }
     
-    
 }
 extension CatalogViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

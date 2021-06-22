@@ -46,12 +46,28 @@ class LoginViewController: UIViewController {
                     token = tokenunwrap
                     request1.setValue("Bearer" + token!, forHTTPHeaderField: "Authorization")}
                 URLSession.shared.dataTask(with: request1){data,response,error in
-                    print("Success")
+                    if let response = response as? HTTPURLResponse{
+                        if response.statusCode == 200{
+                     print("Success")
                     UserDefaults.standard.setValue(true, forKey: "isLoggedIn")
                     UserDefaults.standard.setValue(token, forKey: "token")
                     UserDefaults.standard.synchronize()
+                            DispatchQueue.main.async{
+                            self.dismiss(animated: true)
+                            }
+                        }
+                        else{
+                            DispatchQueue.main.async {
+                            let action = UIAlertController(title: "Ошибка", message: "Неверно введен логин/пароль", preferredStyle: .alert)
+                            action.addAction(UIAlertAction(title: "Ok", style: .default))
+                            self.present(action, animated: true)
+                            }}
+                    }
                 }.resume()
             }
+            }
+            if let error = error{
+                print(error)
             }
         }
         task.resume()
@@ -64,7 +80,6 @@ class LoginViewController: UIViewController {
     }
     @IBAction func registrationTransfer(_ sender: UIButton) {
        let vc = storyboard?.instantiateViewController(identifier: "RegistrationViewController") as! RegistrationViewController
-        vc.modalPresentationStyle = .fullScreen
 //        navigationController?.pushViewController(vc, animated: true)
         present(vc, animated: true, completion: nil)
         
