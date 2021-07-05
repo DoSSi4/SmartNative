@@ -13,6 +13,7 @@ struct Order: Codable{
     let id: Int
     let items: [Item3]
     struct Item3: Codable {
+        let product_id: Int
         let id, count: Int
             let discount, price: Int
             let purchases: Int
@@ -22,6 +23,7 @@ struct Order: Codable{
 
             enum CodingKeys: String, CodingKey {
                 case id
+                case product_id
                 case count, discount, price, purchases
                 case afterDiscount, priceAfterFee, pivot, product
             }

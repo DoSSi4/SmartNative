@@ -1,33 +1,41 @@
 PODS:
+  - Alamofire (5.4.3)
+  - Cloudpayments (1.0.4):
+    - Alamofire
+    - ObjectMapper
   - Kingfisher (6.3.0)
-  - SDK-iOS (1.0.0)
+  - ObjectMapper (4.2.0)
   - SideMenu (6.5.0)
 
 DEPENDENCIES:
+  - Cloudpayments (from `https://github.com/cloudpayments/CloudPayments-SDK-iOS`, branch `master`)
   - Kingfisher
-  - SDK-iOS (from `https://github.com/cloudpayments/SDK-iOS`, branch `master`)
   - SideMenu
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Kingfisher
+    - ObjectMapper
     - SideMenu
 
 EXTERNAL SOURCES:
-  SDK-iOS:
+  Cloudpayments:
     :branch: master
-    :git: https://github.com/cloudpayments/SDK-iOS
+    :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS
 
 CHECKOUT OPTIONS:
-  SDK-iOS:
-    :commit: 5d31f2aeecde87dc7febca1d2136ba348cb5354c
-    :git: https://github.com/cloudpayments/SDK-iOS
+  Cloudpayments:
+    :commit: 4007fc7b798b6ee41c933c0eb9fe0bf1eaf636e1
+    :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS
 
 SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  Cloudpayments: 1c0be171a93e2654c0a156cb4ab434e7a2e76cde
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
-  SDK-iOS: 3d1bb56c31abedf01c122daff14324472ed393e6
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: b8d6a907e31a9ece5331c723d14440b031a1ae84
+PODFILE CHECKSUM: a77701e3c4d30bb81f4ef8cea40004848461db71
 
 COCOAPODS: 1.10.1

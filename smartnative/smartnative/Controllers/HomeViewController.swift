@@ -83,6 +83,9 @@ var imageNames = ["1","2","3"]
     @IBAction func didTapOnMenu(){
         self.present(menu!, animated: true, completion: nil)
     }
+    @IBAction func toLoginFromHome(){
+        self.performSegue(withIdentifier: "toLoginFromHome", sender: self)
+    }
 }
 class ListOfMenu: UITableViewController {
     let bazarColor = UIColor(red: 237/255.0, green: 45/255.0, blue: 77/255.0, alpha: 1)

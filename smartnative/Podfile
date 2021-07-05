@@ -8,7 +8,8 @@ target 'smartnative' do
   # Pods for smartnative
 pod 'Kingfisher' 
 pod 'SideMenu'
-pod 'SDK-iOS', :git =>  "https://github.com/cloudpayments/SDK-iOS", :branch => "master"
+pod 'Cloudpayments', :git =>  "https://github.com/cloudpayments/CloudPayments-SDK-iOS", :branch => "master"
+
 
 
 end

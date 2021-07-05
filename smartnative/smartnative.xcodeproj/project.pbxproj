@@ -40,6 +40,7 @@
 		3F9A9A2E26722DF2007A9E48 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9A9A2D26722DF2007A9E48 /* CartViewController.swift */; };
 		3F9A9A33267235B2007A9E48 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9A9A31267235B2007A9E48 /* CartCell.swift */; };
 		3F9A9A34267235B2007A9E48 /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F9A9A32267235B2007A9E48 /* CartCell.xib */; };
+		3FA148692689D66000E01D7D /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA148682689D66000E01D7D /* PaymentViewController.swift */; };
 		3FB8145C263C5A09007777E7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB8145B263C5A09007777E7 /* HomeViewController.swift */; };
 		60992C929332D4930B5F2B1A /* Pods_smartnative.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0390DF2B762ACE14837AA822 /* Pods_smartnative.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		3F9A9A2D26722DF2007A9E48 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		3F9A9A31267235B2007A9E48 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		3F9A9A32267235B2007A9E48 /* CartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
+		3FA148682689D66000E01D7D /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		3FB8145B263C5A09007777E7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D8A7676A930377A63631620E /* Pods-smartnative.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartnative.release.xcconfig"; path = "Target Support Files/Pods-smartnative/Pods-smartnative.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +197,7 @@
 				3F42CA3B2650715F00DBD06A /* CategoryViewController.swift */,
 				3F079809265D61E20036CE0B /* WishlistViewController.swift */,
 				3F9A9A2D26722DF2007A9E48 /* CartViewController.swift */,
+				3FA148682689D66000E01D7D /* PaymentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				3F05B818264487FB00664228 /* CatalogViewController.swift in Sources */,
 				3F2347C12637225F0070A733 /* ResetPassViewController.swift in Sources */,
 				3F42CA41265156DB00DBD06A /* ProductCell.swift in Sources */,
+				3FA148692689D66000E01D7D /* PaymentViewController.swift in Sources */,
 				3F90F403262D88330071A6E9 /* RegistrationViewController.swift in Sources */,
 				3F84CED52681F920004479E6 /* CartModel.swift in Sources */,
 				3F9A9A33267235B2007A9E48 /* CartCell.swift in Sources */,

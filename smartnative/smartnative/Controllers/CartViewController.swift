@@ -29,7 +29,7 @@ class CartViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let defaults = UserDefaults.standard
-        if defaults.bool(forKey: "isLoggedIn") == false{
+        if !defaults.bool(forKey: "isLoggedIn"){
             self.performSegue(withIdentifier: "CartToLogin", sender: self)
         }
     }
@@ -77,6 +77,30 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource{
         cell.totalLbl.text = "\(CartArr[indexPath.row].price)"
         totalCountLabel.text = "\(CartArr.count) товаров"
         return cell
+    }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let token = UserDefaults.standard.string(forKey: "token")
+        var request: URLRequest = URLRequest(url: URL(string: "https://smartbazar.kz/api/auth/carts/delete/\(CartArr[indexPath.row].product_id)")!)
+        request.httpMethod = "POST"
+        request.setValue("application/json;charset=UTF-8", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("Bearer " + token!, forHTTPHeaderField: "Authorization")
+        let unlikeAction = UIContextualAction(style: .destructive, title: "Удалить из корзины") { action, view, handler in
+            URLSession.shared.dataTask(with: request){data, response, error in
+                if let response = response as? HTTPURLResponse{
+                    print(response)
+                    if response.statusCode == 200{
+                            self.CartArr.remove(at: indexPath.row)
+//                            tableView.deleteRows(at: [indexPath], with: .bottom)
+                    }
+
+                }
+            }.resume()
+    }
+        unlikeAction.backgroundColor = .red
+        let configuration = UISwipeActionsConfiguration(actions: [unlikeAction])
+                return configuration
+        
     }
     
     

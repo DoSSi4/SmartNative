@@ -35,6 +35,7 @@
                             <constraint firstAttribute="height" constant="40" id="9l3-Bt-Z1z"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="tintColor" red="0.92941176889999999" green="0.1764705926" blue="0.30196079609999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <state key="normal" image="heart.fill" catalog="system"/>
                     </button>
                 </subviews>

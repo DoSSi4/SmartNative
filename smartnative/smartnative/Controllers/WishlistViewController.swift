@@ -34,9 +34,8 @@ class WishlistViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let defaults = UserDefaults.standard
-        if defaults.bool(forKey: "isLoggedIn") == false{
+        if !defaults.bool(forKey: "isLoggedIn"){
             self.performSegue(withIdentifier: "LoginView", sender: self)
-            print(UserDefaults.standard.bool(forKey: "isLoggedIn"))
         }
 
     }
@@ -83,7 +82,6 @@ extension WishlistViewController: UITableViewDelegate, UITableViewDataSource{
         request.setValue("application/json;charset=UTF-8", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("Bearer " + token!, forHTTPHeaderField: "Authorization")
-        print(token!)
        
         let unlikeAction = UIContextualAction(style: .destructive, title: "Удалить из избранного") { action, view, handler in
             URLSession.shared.dataTask(with: request){data, response, error in
